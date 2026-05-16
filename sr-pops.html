@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pops — Sadur Rahman</title>
+<link rel="stylesheet" href="sr.css">
+</head>
+<body>
+
+<div id="sr-cur"></div><div id="sr-cuf"></div>
+
+<div class="mob-menu" id="mob">
+  <a href="sr-index.html" class="mob-link" onclick="closeMob()">Home</a>
+  <a href="sr-index.html#work" class="mob-link" onclick="closeMob()">Work</a>
+  <a href="sr-about.html" class="mob-link" onclick="closeMob()">About</a>
+  <a href="sr-contact.html" class="mob-link" onclick="closeMob()">Contact</a>
+  <a href="mailto:rahmansaad@gmail.com" class="mob-cta">Let's talk ↗</a>
+  <div class="mob-socials">
+    <a href="https://linkedin.com/in/rahmansaad" target="_blank" class="mob-social">LinkedIn</a>
+    <a href="https://dribbble.com/rahmansaad" target="_blank" class="mob-social">Dribbble</a>
+    <a href="https://behance.net/srahman" target="_blank" class="mob-social">Behance</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <a href="sr-index.html" class="nav-logo">
+    <img src="sr-logo2.png" alt="SR" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1px solid var(--border)">
+    <span>Sadur<span style="color:var(--gold)">.</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="sr-index.html#work" class="nav-link active">Work</a>
+    <a href="sr-about.html" class="nav-link">About</a>
+    <a href="sr-contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-r">
+    <div class="tt" id="tt" role="button" aria-label="Toggle theme" tabindex="0"><div class="tt-thumb"></div><span class="tt-icon sun">☀</span><span class="tt-icon moon">☽</span></div>
+    <a href="mailto:rahmansaad@gmail.com" class="nav-cta mag">Let's talk ↗</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="proj-hero">
+  <div class="proj-hero-bg" style="background:radial-gradient(ellipse at 40%40%,#040c1a 0%,#020810 50%,#010408 100%)">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60%30%,rgba(96,165,250,.06),transparent 60%)"></div>
+  </div>
+  <div class="proj-hero-content">
+    <div class="proj-bc reveal"><a href="sr-index.html#work">Work</a> → Pops</div>
+    <h1 class="proj-title reveal" style="--d:.08s;color:#60a5fa">Pops</h1>
+    <p class="proj-subtitle reveal" style="--d:.16s;color:#2a4a6a">The intelligent messenger — AI-powered context and smart replies</p>
+    <div class="proj-meta reveal" style="--d:.24s">
+      <div class="pm-item"><span class="pm-label">Project</span><span class="pm-val">Pops Messenger</span></div>
+      <div class="pm-item"><span class="pm-label">Role</span><span class="pm-val">Lead Product Designer</span></div>
+      <div class="pm-item"><span class="pm-label">Year</span><span class="pm-val">2023</span></div>
+      <div class="pm-item"><span class="pm-label">Platform</span><span class="pm-val">iOS · Android</span></div>
+      <div class="pm-item"><span class="pm-label">Employment</span><span class="pm-val" style="color:var(--green)">Full-time</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="proj-body"><div class="proj-body-inner">
+
+  <div class="proj-sec reveal">
+    <span class="ps-label">Overview</span>
+    <h2 class="ps-h">Messaging that thinks with you.</h2>
+    <p class="ps-p">Pops is an AI-powered messaging app that goes beyond sending text. It understands context, learns communication patterns, surfaces smart replies, and helps groups coordinate more effectively. I led the full product design — from initial concept through to a shippable high-fidelity prototype covering all primary user flows.</p>
+    <p class="ps-p">The core design challenge: AI features in messaging feel intrusive or gimmicky when done wrong. The goal was to make intelligence feel invisible — present when useful, absent when not. Every AI touchpoint had to earn its place in the flow.</p>
+  </div>
+
+  <div class="impact-grid reveal">
+    <div class="imp-card"><div class="imp-n" style="color:#60a5fa">AI</div><div class="imp-l">Smart reply suggestions powered by context awareness — not just canned phrases</div></div>
+    <div class="imp-card"><div class="imp-n" style="color:#60a5fa">0→1</div><div class="imp-l">Full product design from blank canvas — IA, research, flows, and visual design</div></div>
+    <div class="imp-card"><div class="imp-n" style="color:#60a5fa">14</div><div class="imp-l">Core screens covering all primary messaging and AI interaction flows</div></div>
+    <div class="imp-card"><div class="imp-n" style="color:#60a5fa">∞</div><div class="imp-l">Context retention — Pops improves suggestions as it learns your conversation patterns</div></div>
+  </div>
+
+  <!-- Chat screens -->
+  <div class="reveal" style="margin:48px 0">
+    <span class="ps-label">App Screens</span>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)">
+      <div style="background:#040b16;padding:clamp(14px,3vw,22px);aspect-ratio:9/16;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid #0d1528;margin-bottom:12px">
+          <div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#60a5fa,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0">A</div>
+          <div><div style="font-family:var(--ui);font-size:11px;font-weight:700;color:#f2ede4">Aisha</div><div style="font-size:8px;color:#60a5fa">● Online</div></div>
+        </div>
+        <div style="margin-bottom:8px"><div style="background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.18);border-radius:12px 12px 12px 3px;padding:7px 11px;font-size:11px;color:#a0c4f8;display:inline-block">Hey! Free tonight? 🎉</div></div>
+        <div style="text-align:right;margin-bottom:8px"><div style="background:#60a5fa;border-radius:12px 12px 3px 12px;padding:7px 11px;font-size:11px;color:#fff;display:inline-block">Yeah, what's the plan?</div></div>
+        <div style="margin-bottom:8px"><div style="background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.18);border-radius:12px 12px 12px 3px;padding:7px 11px;font-size:11px;color:#a0c4f8;display:inline-block">Dinner at Toit? 7pm?</div></div>
+        <div style="margin-top:auto;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:8px 11px">
+          <div style="font-size:7px;font-family:var(--ui);font-weight:800;color:#c9a84c;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px">Pops suggests</div>
+          <div style="font-size:10px;color:#c9a84c">Sounds perfect! See you at 7 🍻</div>
+        </div>
+      </div>
+      <div style="background:#03080f;padding:clamp(14px,3vw,22px);aspect-ratio:9/16;display:flex;flex-direction:column">
+        <div style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#555;margin-bottom:12px">Messages</div>
+        <div style="display:flex;flex-direction:column;gap:7px;flex:1">
+          <div style="display:flex;align-items:center;gap:9px;padding:9px;background:rgba(96,165,250,.06);border-radius:9px"><div style="width:24px;height:24px;border-radius:50%;background:#60a5fa;flex-shrink:0"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:600;color:#f2ede4;margin-bottom:1px">Aisha</div><div style="font-size:9px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Dinner at Toit? 7pm?</div></div></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px"><div style="width:24px;height:24px;border-radius:50%;background:#8247e5;flex-shrink:0"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:600;color:#f2ede4;margin-bottom:1px">Team · Design</div><div style="font-size:9px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Rahul: Can we review the d...</div></div></div>
+          <div style="display:flex;align-items:center;gap:9px;padding:9px"><div style="width:24px;height:24px;border-radius:50%;background:#e84c4c;flex-shrink:0"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:600;color:#f2ede4;margin-bottom:1px">Priya</div><div style="font-size:9px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Did you see the news? 😮</div></div></div>
+        </div>
+      </div>
+      <div style="background:#030810;padding:clamp(14px,3vw,22px);aspect-ratio:9/16;display:flex;flex-direction:column">
+        <div style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#555;margin-bottom:12px">AI Summary</div>
+        <div style="background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.15);border-radius:10px;padding:12px;margin-bottom:8px">
+          <div style="font-size:7px;font-family:var(--ui);font-weight:800;color:#60a5fa;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px">Today's highlights</div>
+          <div style="font-size:10px;color:#a0c4f8;line-height:1.7">• Dinner with Aisha at 7pm<br>• Design review from Rahul<br>• 3 unread in Team channel</div>
+        </div>
+        <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:10px">
+          <div style="font-size:7px;font-family:var(--ui);font-weight:800;color:#c9a84c;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Smart reminder</div>
+          <div style="font-size:10px;color:#c9a84c;opacity:.85">Confirm Toit reservation?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-sec reveal">
+    <span class="ps-label">Design Principle</span>
+    <h2 class="ps-h">AI that earns its place.</h2>
+    <p class="ps-p">Most AI messaging features are designed to impress engineers, not users. They're visible, interruptive, and often wrong. I designed Pops around a different principle: the AI should feel like a good friend who knows when to speak and when to stay quiet.</p>
+    <p class="ps-p">Smart replies appear only when the conversation has reached a natural reply point. Context summaries surface only when returning to a long thread. The AI works in the background, and surfaces only when the user clearly benefits.</p>
+  </div>
+
+  <div class="feat-grid reveal">
+    <div class="feat-card"><span class="feat-icon">🧠</span><h4>Smart Replies</h4><p>Contextual suggestions based on conversation history — not generic "Yes / No / Maybe" options.</p></div>
+    <div class="feat-card"><span class="feat-icon">📋</span><h4>Thread Summaries</h4><p>Coming back to a long group chat? Pops summarises what you missed in 3 bullet points.</p></div>
+    <div class="feat-card"><span class="feat-icon">⏰</span><h4>Smart Reminders</h4><p>Detects plans and commitments in conversations, surfaces a reminder at the right time.</p></div>
+    <div class="feat-card"><span class="feat-icon">🎯</span><h4>Context Awareness</h4><p>Pops learns preferences and patterns — suggestions get better with use over time.</p></div>
+    <div class="feat-card"><span class="feat-icon">👥</span><h4>Group Intelligence</h4><p>Action item detection, decision tracking, and participation nudges for quieter group members.</p></div>
+    <div class="feat-card"><span class="feat-icon">🔒</span><h4>Privacy First</h4><p>All AI processing on-device. No message content leaves your phone. Intelligence without surveillance.</p></div>
+  </div>
+
+</div></div>
+
+<div class="proj-nav">
+  <a href="sr-tapzo.html" class="pn-item"><span class="pn-label">← Previous</span><div class="pn-title">Tapzo · Super App</div></a>
+  <a href="sr-index.html#work" class="pn-item" style="text-align:right"><span class="pn-label">All Projects →</span><div class="pn-title">View All Work</div></a>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a href="sr-index.html" class="f-logo" style="display:flex;align-items:center;gap:8px">
+        <img src="sr-logo2.png" alt="SR" style="width:26px;height:26px;border-radius:50%;object-fit:cover">
+        <span>Sadur<span style="color:var(--gold)">.</span></span>
+      </a>
+      <p class="f-tagline">Product Designer · 12 Years<br>Bengaluru · Available globally</p>
+    </div>
+    <div class="f-cols">
+      <div class="f-col"><span class="f-col-label">Navigate</span><a href="sr-index.html#work">Work</a><a href="sr-about.html">About</a><a href="sr-contact.html">Contact</a></div>
+      <div class="f-col"><span class="f-col-label">Contact</span><a href="mailto:rahmansaad@gmail.com">Email</a><a href="https://linkedin.com/in/rahmansaad" target="_blank">LinkedIn</a><a href="https://dribbble.com/rahmansaad" target="_blank">Dribbble</a><a href="https://behance.net/srahman" target="_blank">Behance</a></div>
+    </div>
+    <div class="footer-clock">
+      <div class="clock-display" id="clockDisplay">00:00:00</div>
+      <div class="clock-date" id="clockDate">--</div>
+      <div class="clock-loc">Bengaluru, IST</div>
+    </div>
+  </div>
+  <div class="footer-name-oneline" id="footerName">
+    <div class="fn-track" id="fnTrack"><span class="fn-big">Sadur Rahman</span></div>
+  </div>
+  <div class="f-bottom">
+    <span>&copy; 2026 Sadur Rahman &middot; Product Designer</span>
+    <span>Bengaluru &middot; Available Globally</span>
+  </div>
+</footer>
+
+<script src="sr.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!---->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Sadur Rahman</title>
+<link rel="stylesheet" href="sr.css">
+</head>
+<body>
+
+<div id="sr-cur"></div><div id="sr-cuf"></div>
+
+<div class="mob-menu" id="mob">
+  <a href="sr-index.html" class="mob-link" onclick="closeMob()">Home</a>
+  <a href="sr-index.html#work" class="mob-link" onclick="closeMob()">Work</a>
+  <a href="sr-about.html" class="mob-link" onclick="closeMob()">About</a>
+  <a href="sr-contact.html" class="mob-link" onclick="closeMob()">Contact</a>
+  <a href="mailto:rahmansaad@gmail.com" class="mob-cta">Let's talk ↗</a>
+  <div class="mob-socials">
+    <a href="https://linkedin.com/in/rahmansaad" target="_blank" class="mob-social">LinkedIn</a>
+    <a href="https://dribbble.com/rahmansaad" target="_blank" class="mob-social">Dribbble</a>
+    <a href="https://behance.net/srahman" target="_blank" class="mob-social">Behance</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <a href="sr-index.html" class="nav-logo">
+    <img src="sr-logo2.png" alt="SR" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1px solid var(--border)">
+    <span>Sadur<span style="color:var(--gold)">.</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="sr-index.html#work" class="nav-link">Work</a>
+    <a href="sr-about.html" class="nav-link">About</a>
+    <a href="sr-contact.html" class="nav-link active">Contact</a>
+  </div>
+  <div class="nav-r">
+    <div class="tt" id="tt" role="button" aria-label="Toggle theme" tabindex="0"><div class="tt-thumb"></div><span class="tt-icon sun">☀</span><span class="tt-icon moon">☽</span></div>
+    <a href="mailto:rahmansaad@gmail.com" class="nav-cta mag">Let's talk ↗</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div style="margin-top:80px">
+  <div class="page-hero-wrap" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+    <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;pointer-events:none"></canvas>
+    <div style="position:relative;z-index:1;padding:clamp(80px,14vh,160px) clamp(16px,5vw,56px) clamp(60px,8vw,100px)">
+      <span class="eyebrow reveal">Get in Touch</span>
+      <h1 class="reveal" style="font-family:var(--serif);font-size:clamp(52px,10vw,130px);line-height:.88;letter-spacing:-.03em;color:var(--text);margin-bottom:20px;font-weight:900;--d:.06s">Let's<br><em style="color:var(--gold)">talk.</em></h1>
+      <p class="reveal" style="font-size:clamp(14px,1.8vw,16px);color:var(--mid);max-width:500px;line-height:1.75;--d:.12s">Open to senior design roles, consulting, and interesting 0→1 products in fintech, AI, SaaS, or consumer apps.</p>
+    </div>
+  </div>
+
+  <div class="contact-two-col">
+    <div class="c-col bordered">
+      <div class="reveal">
+        <p style="font-family:var(--serif);font-size:clamp(22px,3vw,38px);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:18px;letter-spacing:-.02em">Building something <em style="font-style:italic;color:var(--gold)">worth using?</em></p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:32px">I respond to every message personally. If you are working in fintech, AI, or consumer tech — I'd love to hear about it.</p>
+      </div>
+      <div class="cl reveal" style="--d:.1s">
+        <a href="mailto:rahmansaad@gmail.com" class="cl-item"><div><div class="cl-label">Email</div><div class="cl-val">rahmansaad@gmail.com</div></div><span class="cl-arrow">↗</span></a>
+        <a href="https://linkedin.com/in/rahmansaad" target="_blank" class="cl-item"><div><div class="cl-label">LinkedIn</div><div class="cl-val">linkedin.com/in/rahmansaad</div></div><span class="cl-arrow">↗</span></a>
+        <a href="https://dribbble.com/rahmansaad" target="_blank" class="cl-item"><div><div class="cl-label">Dribbble</div><div class="cl-val">dribbble.com/rahmansaad</div></div><span class="cl-arrow">↗</span></a>
+        <a href="https://behance.net/srahman" target="_blank" class="cl-item"><div><div class="cl-label">Behance</div><div class="cl-val">behance.net/srahman</div></div><span class="cl-arrow">↗</span></a>
+      </div>
+      <div style="margin-top:32px;padding:22px;background:var(--bg3);border:1px solid var(--border);border-radius:6px" class="reveal" style="--d:.2s">
+        <p style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Based in</p>
+        <p style="font-size:14px;color:var(--text)">Bengaluru, India</p>
+        <p style="font-size:12px;color:var(--mid);margin-top:4px">Available for remote work globally</p>
+      </div>
+    </div>
+    <div class="c-col">
+      <form class="c-form" id="contactForm">
+        <div class="cf-g"><label class="cf-l">Your Name</label><input type="text" id="f-name" class="cf-i" placeholder="e.g. Priya Sharma" required></div>
+        <div class="cf-g"><label class="cf-l">Email Address</label><input type="email" id="f-email" class="cf-i" placeholder="you@company.com" required></div>
+        <div class="cf-g"><label class="cf-l">What is this about?</label><input type="text" id="f-topic" class="cf-i" placeholder="Role / Project / Collab"></div>
+        <div class="cf-g"><label class="cf-l">Message</label><textarea id="f-message" class="cf-t" placeholder="Tell me what you are building..." required></textarea></div>
+        <button type="submit" class="cf-sub" id="submitBtn">Send Message →</button>
+        <div id="ok" style="display:none;align-items:center;gap:8px;font-family:var(--ui);font-size:11px;color:var(--green);letter-spacing:.1em;margin-top:8px">✓ Sent — I'll reply within 24 hours.</div>
+        <div id="err" style="display:none;align-items:center;gap:8px;font-family:var(--ui);font-size:11px;color:var(--red);letter-spacing:.1em;margin-top:8px">✗ Something went wrong — email me at rahmansaad@gmail.com</div>
+      </form>
+      <script>
+      document.getElementById('contactForm').addEventListener('submit',async function(e){
+        e.preventDefault();
+        const btn=document.getElementById('submitBtn');
+        const okEl=document.getElementById('ok'), errEl=document.getElementById('err');
+        okEl.style.display='none'; errEl.style.display='none';
+        btn.textContent='Sending...'; btn.disabled=true;
+        const payload={
+          name: document.getElementById('f-name').value,
+          email: document.getElementById('f-email').value,
+          topic: document.getElementById('f-topic').value,
+          message: document.getElementById('f-message').value
+        };
+        try{
+          const res=await fetch('https://formsubmit.co/ajax/rahmansaad@gmail.com',{
+            method:'POST',
+            headers:{'Content-Type':'application/json','Accept':'application/json'},
+            body:JSON.stringify(payload)
+          });
+          const json=await res.json();
+          if(json.success==='true'||json.success===true){
+            okEl.style.display='flex';
+            this.reset();
+          } else { errEl.style.display='flex'; }
+        }catch(err){ errEl.style.display='flex'; }
+        finally{ btn.textContent='Send Message →'; btn.disabled=false; }
+      });
+      </script>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a href="sr-index.html" class="f-logo" style="display:flex;align-items:center;gap:8px">
+        <img src="sr-logo2.png" alt="SR" style="width:26px;height:26px;border-radius:50%;object-fit:cover">
+        <span>Sadur<span style="color:var(--gold)">.</span></span>
+      </a>
+      <p class="f-tagline">Product Designer · 12 Years<br>Bengaluru · Available globally</p>
+    </div>
+    <div class="f-cols">
+      <div class="f-col"><span class="f-col-label">Navigate</span><a href="sr-index.html#work">Work</a><a href="sr-about.html">About</a><a href="sr-contact.html">Contact</a></div>
+      <div class="f-col"><span class="f-col-label">Contact</span><a href="mailto:rahmansaad@gmail.com">Email</a><a href="https://linkedin.com/in/rahmansaad" target="_blank">LinkedIn</a><a href="https://dribbble.com/rahmansaad" target="_blank">Dribbble</a><a href="https://behance.net/srahman" target="_blank">Behance</a></div>
+    </div>
+    <div class="footer-clock">
+      <div class="clock-display" id="clockDisplay">00:00:00</div>
+      <div class="clock-date" id="clockDate">--</div>
+      <div class="clock-loc">Bengaluru, IST</div>
+    </div>
+  </div>
+  <div class="footer-name-oneline" id="footerName">
+    <div class="fn-track" id="fnTrack"><span class="fn-big">Sadur Rahman</span></div>
+  </div>
+  <div class="f-bottom">
+    <span>&copy; 2026 Sadur Rahman &middot; Product Designer</span>
+    <span>Bengaluru &middot; Available Globally</span>
+  </div>
+</footer>
+
+<script src="sr.js"></script>
+<script>
+// CONTACT HERO CANVAS — animated geometric grid lines
+(function(){
+  const c=document.getElementById('heroCanvas'); if(!c)return;
+  const ctx=c.getContext('2d'); let W,H,t=0,nodes=[];
+  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;nodes=[];for(let i=0;i<20;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3});}
+  resize(); window.addEventListener('resize',resize);
+  function draw(){
+    ctx.clearRect(0,0,W,H); t+=.003;
+    nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>W)n.vx*=-1;if(n.y<0||n.y>H)n.vy*=-1;});
+    nodes.forEach((a,i)=>{
+      nodes.slice(i+1).forEach(b=>{
+        const d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<160){const alpha=(1-d/160)*.15;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(96,165,250,${alpha})`;ctx.lineWidth=1;ctx.stroke();}
+      });
+      ctx.beginPath();ctx.arc(a.x,a.y,2,0,Math.PI*2);ctx.fillStyle='rgba(96,165,250,.4)';ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

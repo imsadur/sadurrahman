@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Sadur Rahman</title>
+<link rel="stylesheet" href="sr.css">
+</head>
+<body>
+
+<div id="sr-cur"></div><div id="sr-cuf"></div>
+
+<div class="mob-menu" id="mob">
+  <a href="sr-index.html" class="mob-link" onclick="closeMob()">Home</a>
+  <a href="sr-index.html#work" class="mob-link" onclick="closeMob()">Work</a>
+  <a href="sr-about.html" class="mob-link" onclick="closeMob()">About</a>
+  <a href="sr-contact.html" class="mob-link" onclick="closeMob()">Contact</a>
+  <a href="mailto:rahmansaad@gmail.com" class="mob-cta">Let's talk ↗</a>
+  <div class="mob-socials">
+    <a href="https://linkedin.com/in/rahmansaad" target="_blank" class="mob-social">LinkedIn</a>
+    <a href="https://dribbble.com/rahmansaad" target="_blank" class="mob-social">Dribbble</a>
+    <a href="https://behance.net/srahman" target="_blank" class="mob-social">Behance</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <a href="sr-index.html" class="nav-logo">
+    <img src="sr-logo2.png" alt="SR" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1px solid var(--border)">
+    <span>Sadur<span style="color:var(--gold)">.</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="sr-index.html#work" class="nav-link">Work</a>
+    <a href="sr-about.html" class="nav-link active">About</a>
+    <a href="sr-contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-r">
+    <div class="tt" id="tt" role="button" aria-label="Toggle theme" tabindex="0"><div class="tt-thumb"></div><span class="tt-icon sun">☀</span><span class="tt-icon moon">☽</span></div>
+    <a href="mailto:rahmansaad@gmail.com" class="nav-cta mag">Let's talk ↗</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div style="margin-top:80px">
+  <!-- Hero -->
+  <div class="page-hero-wrap" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+    <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;pointer-events:none"></canvas>
+    <div style="position:relative;z-index:1;padding:clamp(80px,14vh,160px) clamp(16px,5vw,56px) clamp(60px,8vw,100px)">
+      <span class="eyebrow reveal">About Me</span>
+      <h1 class="reveal" style="font-family:var(--serif);font-size:clamp(52px,10vw,130px);line-height:.88;letter-spacing:-.03em;color:var(--text);margin-bottom:20px;font-weight:900;--d:.06s">Product<br><em style="color:var(--gold)">Designer.</em></h1>
+      <p class="reveal" style="font-size:clamp(14px,1.8vw,17px);color:var(--mid);max-width:580px;line-height:1.75;--d:.12s">12 years · Bengaluru · Fintech · SaaS · eCommerce · B2B · DeFi · Consumer · Travel · Messaging</p>
+    </div>
+  </div>
+
+  <!-- Two col -->
+  <div class="about-two-col">
+    <div class="a-col bordered">
+      <div class="photo-frame reveal"><img src="photo-standing.jpg" alt="Sadur Rahman at Golconda Fort"></div>
+      <div style="margin-top:24px" class="reveal" style="--d:.1s">
+        <p style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Recognition</p>
+        <p style="font-size:14px;color:var(--mid);line-height:2">🏆 Employee of the Year · Paytm Money 2021<br>🥇 Best Product Design · Tapzo 2016</p>
+      </div>
+      <div style="margin-top:24px" class="reveal" style="--d:.15s">
+        <p style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Education</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.8">Diploma in Design<br><span style="color:var(--muted)">CMC Ltd. New Delhi · 2006–07</span></p>
+      </div>
+    </div>
+    <div class="a-col">
+      <div class="reveal">
+        <p style="font-family:var(--serif);font-size:clamp(24px,3.5vw,42px);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:24px;letter-spacing:-.02em">I design products people <em style="font-style:italic;color:var(--gold)">trust.</em></p>
+        <div style="font-size:clamp(13px,1.6vw,15px);line-height:1.85;color:var(--mid)">
+          <p style="margin-bottom:14px">I'm Sadur Rahman — a Product Designer based in Bengaluru with 12 years of experience. I don't have one domain. I have a way of working: understand the user, understand the business, then design something that earns trust.</p>
+          <p style="margin-bottom:14px">My career spans fintech, SaaS, eCommerce, travel, consumer apps, B2B platforms, messaging, and DeFi. From Paytm Money (1M+ users) to Tapzo (acquired by Amazon), HDFC Securities, and now Aspora — I've shipped at every scale.</p>
+          <p style="margin-bottom:14px">I also do branding, logo design, illustration, and marketing collateral for clients across India and internationally.</p>
+          <p>Currently building AI-native prototypes with Claude, Cursor, and Lovable — from idea to tested prototype faster than any traditional sprint.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(16px,4vw,40px);padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:28px 0" class="reveal" style="--d:.1s">
+        <div><span style="font-family:var(--serif);font-size:clamp(40px,5.5vw,56px);font-weight:900;color:var(--text);line-height:1;display:block" data-target="12">0</span><span style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Years</span></div>
+        <div><span style="font-family:var(--serif);font-size:clamp(40px,5.5vw,56px);font-weight:900;color:var(--text);line-height:1;display:block" data-target="10">0</span><span style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Products</span></div>
+        <div><span style="font-family:var(--serif);font-size:clamp(40px,5.5vw,56px);font-weight:900;color:var(--text);line-height:1;display:block" data-target="2">0</span><span style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Awards</span></div>
+      </div>
+      <div class="reveal" style="--d:.15s">
+        <p style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Domains</p>
+        <div class="skill-pills"><span class="sp">Fintech</span><span class="sp">SaaS</span><span class="sp">eCommerce</span><span class="sp">B2B</span><span class="sp">B2C</span><span class="sp">Consumer</span><span class="sp">Travel</span><span class="sp">DeFi · Web3</span><span class="sp">Messaging</span><span class="sp">Dating</span></div>
+      </div>
+      <div style="margin-top:20px" class="reveal" style="--d:.2s">
+        <p style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Skills</p>
+        <div class="skill-pills"><span class="sp">Product Design</span><span class="sp">UX Research</span><span class="sp">Design Systems</span><span class="sp">Branding</span><span class="sp">Logo Design</span><span class="sp">Illustration</span><span class="sp">AI Prototyping</span><span class="sp">Prompt Engineering</span></div>
+      </div>
+      <div style="margin-top:20px" class="reveal" style="--d:.25s">
+        <p style="font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">AI Tools</p>
+        <div class="skill-pills"><span class="sp">Claude</span><span class="sp">Cursor</span><span class="sp">Lovable</span><span class="sp">OpenAI Codex</span><span class="sp">Replit</span><span class="sp">Figma AI</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div style="padding:clamp(56px,8vw,100px) clamp(16px,5vw,56px);border-top:1px solid var(--border)">
+    <span class="eyebrow reveal">Experience</span>
+    <h2 class="reveal" style="font-family:var(--serif);font-size:clamp(40px,6.5vw,80px);font-weight:900;line-height:.9;letter-spacing:-.03em;color:var(--text);--d:.05s">Where I've <em style="font-style:italic;color:var(--gold)">worked.</em></h2>
+    <div class="exp-list">
+      <div class="erow reveal"><div class="elogo" style="background:#0d1a0d;border-color:#1a2a1a;color:#4ade80">As</div><div class="einfo"><h4>Aspora</h4><p>Design Consultant — US Stocks, ETFs, Options & Digital Gold for NRI investors</p></div><div class="emeta"><div class="edates">Jan 2026 – Now</div><span class="ebadge ct">Consultant</span></div></div>
+      <div class="erow reveal"><div class="elogo" style="background:#0a0a18;border-color:#1a1a28;color:#8247e5">Tr</div><div class="einfo"><h4>Treflo · Dexponent</h4><p>Lead Product Designer — DeFi platform UX, AI-accelerated design process</p></div><div class="emeta"><div class="edates">Nov 2024 – Dec 2025</div><span class="ebadge ft">Full-time</span></div></div>
+      <div class="erow reveal"><div class="elogo" style="background:#0a0a18;border-color:#0a1428;color:#60a5fa">HD</div><div class="einfo"><h4>HDFC Securities</h4><p>UX Design Lead — InvestNow mutual fund webapp complete overhaul</p></div><div class="emeta"><div class="edates">Dec 2023 – Sep 2024</div><span class="ebadge ft">Full-time</span></div></div>
+      <div class="erow reveal"><div class="elogo" style="background:#0d1a0d;border-color:#1a2a1a;color:#4ade80">PM</div><div class="einfo"><h4>Paytm Money</h4><p>Executive Design Manager — Mutual Funds, Stocks, NPS · 6 years · 1M+ users</p></div><div class="emeta"><div class="edates">Sep 2017 – Oct 2023</div><span class="ebadge ft">Full-time</span></div></div>
+      <div class="erow reveal"><div class="elogo" style="background:#1a0a0a;border-color:#2a1010;color:#e84c4c">Tz</div><div class="einfo"><h4>Tapzo</h4><p>Product Designer — India's first super app · Acquired by Amazon 2017</p></div><div class="emeta"><div class="edates">Sep 2014 – Sep 2017</div><span class="ebadge ft">Full-time</span></div></div>
+      <div class="erow reveal"><div class="elogo" style="background:#111;border-color:#1a1a1a;color:var(--mid)">Fi</div><div class="einfo"><h4>Finoit Technologies</h4><p>UI Designer — B2B SaaS and client products</p></div><div class="emeta"><div class="edates">Feb 2013 – Aug 2014</div><span class="ebadge ft">Full-time</span></div></div>
+    </div>
+  </div>
+
+  <section class="cta-sec">
+    <div class="cta-pre reveal">Open to work</div>
+    <h2 class="cta-h reveal" style="--d:.06s">Let's work<br><em>together</em></h2>
+    <a href="sr-contact.html" class="cta-btn mag reveal" style="--d:.14s">Get in touch →</a>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a href="sr-index.html" class="f-logo" style="display:flex;align-items:center;gap:8px">
+        <img src="sr-logo2.png" alt="SR" style="width:26px;height:26px;border-radius:50%;object-fit:cover">
+        <span>Sadur<span style="color:var(--gold)">.</span></span>
+      </a>
+      <p class="f-tagline">Product Designer · 12 Years<br>Bengaluru · Available globally</p>
+    </div>
+    <div class="f-cols">
+      <div class="f-col"><span class="f-col-label">Navigate</span><a href="sr-index.html#work">Work</a><a href="sr-about.html">About</a><a href="sr-contact.html">Contact</a></div>
+      <div class="f-col"><span class="f-col-label">Contact</span><a href="mailto:rahmansaad@gmail.com">Email</a><a href="https://linkedin.com/in/rahmansaad" target="_blank">LinkedIn</a><a href="https://dribbble.com/rahmansaad" target="_blank">Dribbble</a><a href="https://behance.net/srahman" target="_blank">Behance</a></div>
+    </div>
+    <div class="footer-clock">
+      <div class="clock-display" id="clockDisplay">00:00:00</div>
+      <div class="clock-date" id="clockDate">--</div>
+      <div class="clock-loc">Bengaluru, IST</div>
+    </div>
+  </div>
+  <div class="footer-name-oneline" id="footerName">
+    <div class="fn-track" id="fnTrack"><span class="fn-big">Sadur Rahman</span></div>
+  </div>
+  <div class="f-bottom">
+    <span>&copy; 2026 Sadur Rahman &middot; Product Designer</span>
+    <span>Bengaluru &middot; Available Globally</span>
+  </div>
+</footer>
+
+<script src="sr.js"></script>
+<script>
+// ABOUT HERO CANVAS — warm morphing blobs
+(function(){
+  const c=document.getElementById('heroCanvas'); if(!c)return;
+  const ctx=c.getContext('2d'); let W,H,t=0;
+  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;} resize(); window.addEventListener('resize',resize);
+  const blobs=[
+    {x:.2,y:.3,r:.35,color:'201,168,76'},{x:.7,y:.6,r:.28,color:'226,192,110'},{x:.5,y:.2,r:.22,color:'180,130,60'},{x:.8,y:.2,r:.18,color:'201,168,76'}
+  ];
+  function draw(){
+    ctx.clearRect(0,0,W,H); t+=.004;
+    blobs.forEach((b,i)=>{
+      const px=(b.x+Math.sin(t+i)*0.08)*W, py=(b.y+Math.cos(t*1.3+i)*0.06)*H, pr=b.r*Math.min(W,H)*(1+Math.sin(t*2+i)*.1);
+      const g=ctx.createRadialGradient(px,py,0,px,py,pr);
+      g.addColorStop(0,`rgba(${b.color},.18)`);g.addColorStop(1,`rgba(${b.color},0)`);
+      ctx.beginPath();ctx.arc(px,py,pr,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
