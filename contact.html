@@ -64,7 +64,6 @@
 
 <div style="margin-top:80px">
   <div class="page-hero-wrap" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
-    <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;pointer-events:none"></canvas>
     <div style="position:relative;z-index:1;padding:clamp(80px,14vh,160px) clamp(16px,5vw,56px) clamp(60px,8vw,100px)">
       <span class="eyebrow reveal">Get in Touch</span>
       <h1 class="reveal" style="font-family:var(--serif);font-size:clamp(52px,10vw,130px);line-height:.88;letter-spacing:-.03em;color:var(--text);margin-bottom:20px;font-weight:900;--d:.06s">Let's<br><em style="color:var(--gold)">talk.</em></h1>
@@ -151,27 +150,22 @@
 </footer>
 
 <script src="sr.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
 <script>
-// CONTACT HERO CANVAS — animated geometric grid lines
-(function(){
-  const c=document.getElementById('heroCanvas'); if(!c)return;
-  const ctx=c.getContext('2d'); let W,H,t=0,nodes=[];
-  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;nodes=[];for(let i=0;i<20;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3});}
-  resize(); window.addEventListener('resize',resize);
-  function draw(){
-    ctx.clearRect(0,0,W,H); t+=.003;
-    nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>W)n.vx*=-1;if(n.y<0||n.y>H)n.vy*=-1;});
-    nodes.forEach((a,i)=>{
-      nodes.slice(i+1).forEach(b=>{
-        const d=Math.hypot(a.x-b.x,a.y-b.y);
-        if(d<160){const alpha=(1-d/160)*.15;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(96,165,250,${alpha})`;ctx.lineWidth=1;ctx.stroke();}
-      });
-      ctx.beginPath();ctx.arc(a.x,a.y,2,0,Math.PI*2);ctx.fillStyle='rgba(96,165,250,.4)';ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
+// VANTA RINGS — Contact hero (pulse)
+VANTA.RINGS({
+  el: '.page-hero-wrap',
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200,
+  minWidth: 200,
+  scale: 1.0,
+  scaleMobile: 1.0,
+  backgroundColor: 0x0b0b0b,
+  color: 0x1a2a4a
+});
 </script>
 </body>
 </html>

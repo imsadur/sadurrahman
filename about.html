@@ -64,7 +64,6 @@
 <div style="margin-top:80px">
   <!-- Hero -->
   <div class="page-hero-wrap" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
-    <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;pointer-events:none"></canvas>
     <div style="position:relative;z-index:1;padding:clamp(80px,14vh,160px) clamp(16px,5vw,56px) clamp(60px,8vw,100px)">
       <span class="eyebrow reveal">About Me</span>
       <h1 class="reveal" style="font-family:var(--serif);font-size:clamp(52px,10vw,130px);line-height:.88;letter-spacing:-.03em;color:var(--text);margin-bottom:20px;font-weight:900;--d:.06s">Product<br><em style="color:var(--gold)">Designer.</em></h1>
@@ -165,27 +164,24 @@
 </footer>
 
 <script src="sr.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
 <script>
-// ABOUT HERO CANVAS — warm morphing blobs
-(function(){
-  const c=document.getElementById('heroCanvas'); if(!c)return;
-  const ctx=c.getContext('2d'); let W,H,t=0;
-  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;} resize(); window.addEventListener('resize',resize);
-  const blobs=[
-    {x:.2,y:.3,r:.35,color:'201,168,76'},{x:.7,y:.6,r:.28,color:'226,192,110'},{x:.5,y:.2,r:.22,color:'180,130,60'},{x:.8,y:.2,r:.18,color:'201,168,76'}
-  ];
-  function draw(){
-    ctx.clearRect(0,0,W,H); t+=.004;
-    blobs.forEach((b,i)=>{
-      const px=(b.x+Math.sin(t+i)*0.08)*W, py=(b.y+Math.cos(t*1.3+i)*0.06)*H, pr=b.r*Math.min(W,H)*(1+Math.sin(t*2+i)*.1);
-      const g=ctx.createRadialGradient(px,py,0,px,py,pr);
-      g.addColorStop(0,`rgba(${b.color},.18)`);g.addColorStop(1,`rgba(${b.color},0)`);
-      ctx.beginPath();ctx.arc(px,py,pr,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
+// VANTA HALO — About hero (warm mist)
+VANTA.HALO({
+  el: '.page-hero-wrap',
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200,
+  minWidth: 200,
+  baseColor: 0x1f0e00,
+  backgroundColor: 0x0b0b0b,
+  amplitudeFactor: 1.4,
+  xOffset: 0.05,
+  yOffset: -0.08,
+  size: 1.6
+});
 </script>
 </body>
 </html>
