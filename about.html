@@ -64,6 +64,7 @@
 <div style="margin-top:80px">
   <!-- Hero -->
   <div class="page-hero-wrap" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+    <div id="trunk-wrap" style="position:absolute;bottom:0;right:0;width:58%;height:100%;z-index:0;pointer-events:none"></div>
     <div style="position:relative;z-index:1;padding:clamp(80px,14vh,160px) clamp(16px,5vw,56px) clamp(60px,8vw,100px)">
       <span class="eyebrow reveal">About Me</span>
       <h1 class="reveal" style="font-family:var(--serif);font-size:clamp(52px,10vw,130px);line-height:.88;letter-spacing:-.03em;color:var(--text);margin-bottom:20px;font-weight:900;--d:.06s">Product<br><em style="color:var(--gold)">Designer.</em></h1>
@@ -164,23 +165,20 @@
 </footer>
 
 <script src="sr.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.trunk.min.js"></script>
 <script>
-// VANTA HALO — About hero (warm mist)
-VANTA.HALO({
-  el: '.page-hero-wrap',
+VANTA.TRUNK({
+  el: '#trunk-wrap',
   mouseControls: true,
   touchControls: true,
   gyroControls: false,
   minHeight: 200,
   minWidth: 200,
-  baseColor: 0x1f0e00,
-  backgroundColor: 0x0b0b0b,
-  amplitudeFactor: 1.4,
-  xOffset: 0.05,
-  yOffset: -0.08,
-  size: 1.6
+  scale: 1.0,
+  scaleMobile: 1.0,
+  color: 0x877e30,
+  backgroundColor: 0x0b0b0b
 });
 </script>
 </body>
