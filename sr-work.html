@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Sadur Rahman</title>
+<link rel="stylesheet" href="sr.css">
+<style>
+/* VIEW CURSOR */
+#viewCursor{position:fixed;pointer-events:none;z-index:9999;top:0;left:0;transform:translate(-50%,-50%) scale(0);opacity:0;transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .25s;font-family:var(--ui);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0b0b0b;background:var(--gold);padding:12px 22px;border-radius:100px;white-space:nowrap}
+#viewCursor.active{transform:translate(-50%,-50%) scale(1);opacity:1}
+
+/* WORK HERO */
+.work-hero{position:relative;min-height:52vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--border)}
+.work-hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.work-hero-content{position:relative;z-index:2;padding:clamp(100px,16vh,180px) clamp(16px,5vw,56px) clamp(48px,6vh,80px)}
+.work-hero-content .eyebrow{display:block;margin-bottom:16px}
+.work-hero-h{font-family:var(--serif);font-size:clamp(56px,10vw,140px);font-weight:900;line-height:.88;letter-spacing:-.03em;color:var(--text);margin-bottom:20px}
+.work-hero-h em{color:var(--gold);font-style:italic}
+.work-hero-sub{font-size:clamp(14px,1.6vw,17px);color:var(--mid);max-width:520px;line-height:1.7}
+
+/* SCROLL SECTION */
+.work-scroll-wrap{position:relative;background:var(--bg)}
+.scroll-track-label{padding:clamp(32px,4vw,56px) clamp(16px,5vw,56px) 20px;display:flex;align-items:center;justify-content:space-between}
+.scroll-track-label span{font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.scroll-hint{display:flex;align-items:center;gap:8px;font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.scroll-hint-line{width:32px;height:1px;background:var(--muted)}
+
+/* CARDS CONTAINER */
+.work-scroll{display:flex;gap:3px;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 clamp(16px,5vw,56px) clamp(40px,5vw,64px);cursor:grab}
+.work-scroll::-webkit-scrollbar{display:none}
+.work-scroll.dragging{cursor:grabbing;user-select:none}
+
+/* CARD */
+.wk-card{flex-shrink:0;width:clamp(280px,38vw,520px);height:clamp(420px,65vh,700px);border-radius:12px;overflow:hidden;position:relative;scroll-snap-align:start;cursor:none;background:var(--bg3);border:1px solid var(--border);transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
+.wk-card:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 32px 80px rgba(0,0,0,.6)}
+.wk-card-bg{position:absolute;inset:0;background-size:cover;background-position:center top;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.wk-card:hover .wk-card-bg{transform:scale(1.06)}
+.wk-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.3) 45%,rgba(0,0,0,.05) 100%);transition:background .4s}
+.wk-card:hover .wk-card-overlay{background:linear-gradient(to top,rgba(0,0,0,.96) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,.15) 100%)}
+.wk-card-num{position:absolute;top:22px;left:24px;font-family:var(--ui);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);transition:color .3s}
+.wk-card:hover .wk-card-num{color:var(--gold)}
+.wk-card-tag{position:absolute;top:20px;right:20px;font-family:var(--ui);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:5px 12px;border-radius:100px;transition:background .3s,color .3s,border-color .3s}
+.wk-card:hover .wk-card-tag{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.4);color:var(--gold)}
+.wk-card-info{position:absolute;bottom:0;left:0;right:0;padding:28px 24px}
+.wk-card-co{font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;opacity:.8}
+.wk-card-title{font-family:var(--serif);font-size:clamp(20px,2.8vw,32px);font-weight:900;color:#f2ede4;line-height:1.05;letter-spacing:-.02em;margin-bottom:8px}
+.wk-card-sub{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;max-width:300px;transform:translateY(8px);opacity:0;transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .35s}
+.wk-card:hover .wk-card-sub{transform:none;opacity:1}
+.wk-card-year{font-family:var(--ui);font-size:10px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.25);margin-top:10px;transition:color .3s}
+.wk-card:hover .wk-card-year{color:rgba(255,255,255,.4)}
+
+/* CS BADGE */
+.wk-cs-badge{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:5px 12px;border-radius:100px;transform:translateY(12px);opacity:0;transition:transform .45s .05s cubic-bezier(.16,1,.3,1),opacity .35s .05s}
+.wk-card:hover .wk-cs-badge{transform:none;opacity:1}
+.wk-cs-coming{color:var(--mid);border-color:var(--border)}
+
+/* SCROLL PROGRESS BAR */
+.scroll-progress{height:1px;background:var(--border);margin:0 clamp(16px,5vw,56px)}
+.scroll-progress-fill{height:100%;background:var(--gold);width:0%;transition:width .1s linear}
+
+/* BOTTOM CTA */
+.work-cta{padding:clamp(64px,10vw,120px) clamp(16px,5vw,56px);border-top:1px solid var(--border)}
+.work-cta-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.work-cta h3{font-family:var(--serif);font-size:clamp(32px,5vw,64px);font-weight:900;line-height:.95;letter-spacing:-.03em;color:var(--text)}
+.work-cta h3 em{color:var(--gold);font-style:italic}
+
+@media(max-width:768px){
+  .wk-card{width:clamp(260px,82vw,360px);height:clamp(380px,60vh,500px)}
+  .work-cta-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div id="viewCursor">View →</div>
+<div id="sr-cur"></div><div id="sr-cuf"></div>
+
+<div class="mob-menu" id="mob">
+  <a href="sr-index.html" class="mob-link" onclick="closeMob()">Home</a>
+  <a href="sr-work.html" class="mob-link active" onclick="closeMob()">Work</a>
+  <a href="sr-about.html" class="mob-link" onclick="closeMob()">About</a>
+  <a href="sr-contact.html" class="mob-link" onclick="closeMob()">Contact</a>
+  <a href="mailto:rahmansaad@gmail.com" class="mob-cta">Let's talk ↗</a>
+  <div class="mob-socials">
+    <a href="https://linkedin.com/in/rahmansaad" target="_blank" class="mob-social">LinkedIn</a>
+    <a href="https://dribbble.com/rahmansaad" target="_blank" class="mob-social">Dribbble</a>
+    <a href="https://behance.net/srahman" target="_blank" class="mob-social">Behance</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <a href="sr-index.html" class="nav-logo">
+    <img src="sr-logo2.png" alt="SR" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1px solid var(--border)">
+    <span>Sadur<span style="color:var(--gold)">.</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="sr-index.html" class="nav-link">Home</a>
+    <a href="sr-work.html" class="nav-link active">Work</a>
+    <a href="sr-about.html" class="nav-link">About</a>
+    <a href="sr-contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="nav-r">
+    <div class="tt" id="tt" role="button" aria-label="Toggle theme" tabindex="0"><div class="tt-thumb"></div><span class="tt-icon sun">☀</span><span class="tt-icon moon">☽</span></div>
+    <a href="mailto:rahmansaad@gmail.com" class="nav-cta mag">Let's talk ↗</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="work-hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="work-hero-content">
+    <span class="eyebrow reveal">Selected Work</span>
+    <h1 class="work-hero-h reveal" style="--d:.06s">Projects that<br><em>shipped.</em></h1>
+    <p class="work-hero-sub reveal" style="--d:.12s">12 years of end-to-end product design — fintech, SaaS, DeFi, consumer apps, B2B platforms, and more.</p>
+  </div>
+</section>
+
+<!-- SCROLL SECTION -->
+<div class="work-scroll-wrap">
+  <div class="scroll-track-label">
+    <span>6 Projects</span>
+    <div class="scroll-hint"><div class="scroll-hint-line"></div><span>Drag to explore</span><div class="scroll-hint-line"></div></div>
+  </div>
+
+  <div class="work-scroll" id="workScroll">
+
+    <!-- 01 Paytm Money -->
+    <a href="sr-paytm.html" class="wk-card">
+      <div class="wk-card-bg" style="background-image:url(thumb-pm.png);background-color:#030a05"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,10,5,.4),rgba(7,26,12,.2))"></div>
+      <div class="wk-card-overlay"></div>
+      <div class="wk-card-num">01</div>
+      <div class="wk-card-tag">Fintech · Mobile</div>
+      <div class="wk-card-info">
+        <div class="wk-card-co">Paytm Money · 2017–2023</div>
+        <div class="wk-card-title">Mutual Fund<br>Investment App</div>
+        <div class="wk-card-sub">KYC redesign, SIP flows, fund discovery and portfolio tracking for 1M+ users.</div>
+        <div class="wk-card-year">6 years · Executive Design Manager</div>
+        <div class="wk-cs-badge">View Case Study →</div>
+      </div>
+    </a>
+
+    <!-- 02 Dexponent -->
+    <a href="sr-dexponent.html" class="wk-card">
+      <div class="wk-card-bg" style="background-image:url(Dex.png);background-color:#020210"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,rgba(130,71,229,.2),transparent 65%)"></div>
+      <div class="wk-card-overlay"></div>
+      <div class="wk-card-num">02</div>
+      <div class="wk-card-tag">DeFi · Web3</div>
+      <div class="wk-card-info">
+        <div class="wk-card-co">Treflo · Dexponent · 2024–2025</div>
+        <div class="wk-card-title">Institutional<br>DeFi Platform</div>
+        <div class="wk-card-sub">AI-accelerated UX for on-chain investment funds. 30+ concepts, 25% engagement lift.</div>
+        <div class="wk-card-year">Lead Product Designer</div>
+        <div class="wk-cs-badge">View Case Study →</div>
+      </div>
+    </a>
+
+    <!-- 03 Tapzo -->
+    <a href="sr-tapzo.html" class="wk-card">
+      <div class="wk-card-bg" style="background:linear-gradient(155deg,#1a0808 0%,#2a0e0e 50%,#0f0404 100%)"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(232,76,76,.18),transparent 60%)"></div>
+      <div class="wk-card-overlay"></div>
+      <div class="wk-card-num">03</div>
+      <div class="wk-card-tag">Super App · Mobile</div>
+      <div class="wk-card-info">
+        <div class="wk-card-co">Tapzo · 2014–2017</div>
+        <div class="wk-card-title" style="color:#e84c4c">India's First<br>Super App</div>
+        <div class="wk-card-sub">Travel, food, recharge, movies unified in one experience. Acquired by Amazon 2017.</div>
+        <div class="wk-card-year">Product Designer · Best Design Award 2016</div>
+        <div class="wk-cs-badge">View Case Study →</div>
+      </div>
+    </a>
+
+    <!-- 04 Pops -->
+    <a href="sr-pops.html" class="wk-card">
+      <div class="wk-card-bg" style="background:linear-gradient(155deg,#03080f 0%,#060c18 50%,#010408 100%)"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 35%,rgba(96,165,250,.18),transparent 60%)"></div>
+      <div class="wk-card-overlay"></div>
+      <div class="wk-card-num">04</div>
+      <div class="wk-card-tag">AI · Consumer</div>
+      <div class="wk-card-info">
+        <div class="wk-card-co">Pops · 2023</div>
+        <div class="wk-card-title" style="color:#60a5fa">The Intelligent<br>Messenger</div>
+        <div class="wk-card-sub">AI-powered messaging with smart replies, thread summaries, and group intelligence.</div>
+        <div class="wk-card-year">Lead Product Designer · 0→1</div>
+        <div class="wk-cs-badge">View Case Study →</div>
+      </div>
+    </a>
+
+    <!-- 05 RentHunt -->
+    <a href="https://dribbble.com/shots/22610639" target="_blank" class="wk-card">
+      <div class="wk-card-bg" style="background-image:url(rent.png);background-color:#0a0d12"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,13,18,.5),rgba(20,26,36,.2))"></div>
+      <div class="wk-card-overlay"></div>
+      <div class="wk-card-num">05</div>
+      <div class="wk-card-tag">SaaS · Web</div>
+      <div class="wk-card-info">
+        <div class="wk-card-co">Dribbble Exploration · 2023</div>
+        <div class="wk-card-title">RentHunt<br>Platform</div>
+        <div class="wk-card-sub">Apartment rental discovery with smart filters, map view, and tenant-first design.</div>
+        <div class="wk-card-year">Product Design Exploration</div>
+        <div class="wk-cs-badge">View on Dribbble ↗</div>
+      </div>
+    </a>
+
+    <!-- 06 HDFC -->
+    <div class="wk-card" style="cursor:default">
+      <div class="wk-card-bg" style="background:linear-gradient(155deg,#030812 0%,#060e24 50%,#020610 100%)"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 55% 40%,rgba(37,99,235,.15),transparent 60%)"></div>
+      <div class="wk-card-overlay"></div>
+      <div class="wk-card-num">06</div>
+      <div class="wk-card-tag">Fintech · Web</div>
+      <div class="wk-card-info">
+        <div class="wk-card-co">HDFC Securities · 2023–2024</div>
+        <div class="wk-card-title" style="color:#60a5fa">InvestNow<br>Webapp</div>
+        <div class="wk-card-sub">Complete UX overhaul of the mutual fund webapp — simplified flows, new design system.</div>
+        <div class="wk-card-year">UX Design Lead</div>
+        <div class="wk-cs-badge wk-cs-coming">Case Study Coming Soon</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="scroll-progress"><div class="scroll-progress-fill" id="scrollFill"></div></div>
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="work-cta">
+  <div class="work-cta-inner">
+    <h3 class="reveal">Have a project<br>in <em>mind?</em></h3>
+    <a href="sr-contact.html" class="cta-btn mag reveal" style="--d:.08s">Let's talk →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a href="sr-index.html" class="f-logo" style="display:flex;align-items:center;gap:8px">
+        <img src="sr-logo2.png" alt="SR" style="width:26px;height:26px;border-radius:50%;object-fit:cover">
+        <span>Sadur<span style="color:var(--gold)">.</span></span>
+      </a>
+      <p class="f-tagline">Product Designer · 12 Years<br>Bengaluru · Available globally</p>
+    </div>
+    <div class="f-cols">
+      <div class="f-col"><span class="f-col-label">Navigate</span><a href="sr-index.html">Home</a><a href="sr-work.html">Work</a><a href="sr-about.html">About</a><a href="sr-contact.html">Contact</a></div>
+      <div class="f-col"><span class="f-col-label">Contact</span><a href="mailto:rahmansaad@gmail.com">Email</a><a href="https://linkedin.com/in/rahmansaad" target="_blank">LinkedIn</a><a href="https://dribbble.com/rahmansaad" target="_blank">Dribbble</a><a href="https://behance.net/srahman" target="_blank">Behance</a></div>
+    </div>
+    <div class="footer-clock">
+      <div class="clock-display" id="clockDisplay">00:00:00</div>
+      <div class="clock-date" id="clockDate">--</div>
+      <div class="clock-loc">Bengaluru, IST</div>
+    </div>
+  </div>
+  <div class="footer-name-oneline" id="footerName">
+    <div class="fn-track" id="fnTrack"><span class="fn-big">Sadur Rahman</span></div>
+  </div>
+  <div class="f-bottom">
+    <span>&copy; 2026 Sadur Rahman &middot; Product Designer</span>
+    <span>Bengaluru &middot; Available Globally</span>
+  </div>
+</footer>
+
+<script src="sr.js"></script>
+<script>
+// HERO CANVAS — particles
+(function(){
+  const c=document.getElementById('heroCanvas'); if(!c)return;
+  const ctx=c.getContext('2d'); let W,H,pts=[];
+  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;pts=[];for(let i=0;i<60;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*1.5+.5});}
+  resize(); window.addEventListener('resize',resize);
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;});
+    pts.forEach((a,i)=>{
+      pts.slice(i+1).forEach(b=>{const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(201,168,76,${(1-d/130)*.18})`;ctx.stroke();}});
+      ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,Math.PI*2);ctx.fillStyle='rgba(201,168,76,.55)';ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// CUSTOM [VIEW] CURSOR
+(function(){
+  const vc=document.getElementById('viewCursor'); if(!vc)return;
+  let vx=0,vy=0,tx=0,ty=0,raf=null;
+  document.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;});
+  function loop(){vx+=(tx-vx)*.18;vy+=(ty-vy)*.18;vc.style.left=vx+'px';vc.style.top=vy+'px';raf=requestAnimationFrame(loop);}
+  loop();
+  document.querySelectorAll('.wk-card[href], a.wk-card').forEach(card=>{
+    card.addEventListener('mouseenter',()=>vc.classList.add('active'));
+    card.addEventListener('mouseleave',()=>vc.classList.remove('active'));
+  });
+})();
+
+// DRAG TO SCROLL
+(function(){
+  const el=document.getElementById('workScroll'); if(!el)return;
+  let down=false,startX,scrollLeft;
+  el.addEventListener('mousedown',e=>{down=true;el.classList.add('dragging');startX=e.pageX-el.offsetLeft;scrollLeft=el.scrollLeft;});
+  el.addEventListener('mouseleave',()=>{down=false;el.classList.remove('dragging');});
+  el.addEventListener('mouseup',()=>{down=false;el.classList.remove('dragging');});
+  el.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();const x=e.pageX-el.offsetLeft;el.scrollLeft=scrollLeft-(x-startX)*1.4;});
+})();
+
+// SCROLL PROGRESS BAR
+(function(){
+  const el=document.getElementById('workScroll'),fill=document.getElementById('scrollFill'); if(!el||!fill)return;
+  el.addEventListener('scroll',()=>{const pct=el.scrollLeft/(el.scrollWidth-el.clientWidth)*100;fill.style.width=pct+'%';},{passive:true});
+})();
+</script>
+</body>
+</html>
