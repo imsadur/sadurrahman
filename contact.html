@@ -5,6 +5,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Sadur Rahman</title>
+  <meta name="description" content="Get in touch with Sadur Rahman. Open to senior design roles, consulting, and 0→1 products in fintech, AI, SaaS or consumer apps.">
+  <meta name="keywords" content="product designer, UX designer, fintech design, Sadur Rahman, Bengaluru designer, SaaS design, mobile app design, DeFi design">
+  <meta name="author" content="Sadur Rahman">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="icon" type="image/png" href="sr-logo2.png">
+  <link rel="apple-touch-icon" href="sr-logo2.png">
+  <link rel="canonical" href="https://sadurrahman.vercel.app/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sadur Rahman — Product Designer">
+  <meta property="og:url" content="https://sadurrahman.vercel.app/contact.html">
+  <meta property="og:title" content="Contact — Sadur Rahman">
+  <meta property="og:description" content="Get in touch with Sadur Rahman. Open to senior design roles, consulting, and 0→1 products in fintech, AI, SaaS or consumer apps.">
+  <meta property="og:image" content="https://sadurrahman.vercel.app/saad_hero.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Sadur Rahman">
+  <meta name="twitter:description" content="Get in touch with Sadur Rahman. Open to senior design roles, consulting, and 0→1 products in fintech, AI, SaaS or consumer apps.">
+  <meta name="twitter:image" content="https://sadurrahman.vercel.app/saad_hero.png">
 <link rel="stylesheet" href="sr.css">
 </head>
 <body>
@@ -12,10 +32,10 @@
 <div id="sr-cur"></div><div id="sr-cuf"></div>
 
 <div class="mob-menu" id="mob">
-  <a href="sr-index.html" class="mob-link" onclick="closeMob()">Home</a>
-  <a href="sr-work.html" class="mob-link" onclick="closeMob()">Work</a>
-  <a href="sr-about.html" class="mob-link" onclick="closeMob()">About</a>
-  <a href="sr-contact.html" class="mob-link" onclick="closeMob()">Contact</a>
+  <a href="index.html" class="mob-link" onclick="closeMob()">Home</a>
+  <a href="work.html" class="mob-link" onclick="closeMob()">Work</a>
+  <a href="about.html" class="mob-link" onclick="closeMob()">About</a>
+  <a href="contact.html" class="mob-link" onclick="closeMob()">Contact</a>
   <a href="mailto:rahmansaad@gmail.com" class="mob-cta">Let's talk ↗</a>
   <div class="mob-socials">
     <a href="https://linkedin.com/in/rahmansaad" target="_blank" class="mob-social">LinkedIn</a>
@@ -25,15 +45,15 @@
 </div>
 
 <nav id="nav">
-  <a href="sr-index.html" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <img src="sr-logo2.png" alt="SR" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1px solid var(--border)">
     <span>Sadur<span style="color:var(--gold)">.</span></span>
   </a>
   <div class="nav-links">
-    <a href="sr-index.html" class="nav-link">Home</a>
-    <a href="sr-work.html" class="nav-link">Work</a>
-    <a href="sr-about.html" class="nav-link">About</a>
-    <a href="sr-contact.html" class="nav-link active">Contact</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="work.html" class="nav-link">Work</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
   </div>
   <div class="nav-r">
     <div class="tt" id="tt" role="button" aria-label="Toggle theme" tabindex="0"><div class="tt-thumb"></div><span class="tt-icon sun">☀</span><span class="tt-icon moon">☽</span></div>
@@ -72,40 +92,30 @@
     </div>
     <div class="c-col">
       <form class="c-form" id="contactForm">
-        <div class="cf-g"><label class="cf-l">Your Name</label><input type="text" id="f-name" class="cf-i" placeholder="e.g. Priya Sharma" required></div>
-        <div class="cf-g"><label class="cf-l">Email Address</label><input type="email" id="f-email" class="cf-i" placeholder="you@company.com" required></div>
-        <div class="cf-g"><label class="cf-l">What is this about?</label><input type="text" id="f-topic" class="cf-i" placeholder="Role / Project / Collab"></div>
-        <div class="cf-g"><label class="cf-l">Message</label><textarea id="f-message" class="cf-t" placeholder="Tell me what you are building..." required></textarea></div>
+        <div class="cf-g"><label class="cf-l">Your Name</label><input type="text" name="name" class="cf-i" placeholder="e.g. Priya Sharma" required></div>
+        <div class="cf-g"><label class="cf-l">Email Address</label><input type="email" name="email" class="cf-i" placeholder="you@company.com" required></div>
+        <div class="cf-g"><label class="cf-l">What is this about?</label><input type="text" name="subject" class="cf-i" placeholder="Role / Project / Collab"></div>
+        <div class="cf-g"><label class="cf-l">Message</label><textarea name="message" class="cf-t" placeholder="Tell me what you are building..." required></textarea></div>
         <button type="submit" class="cf-sub" id="submitBtn">Send Message →</button>
         <div id="ok" style="display:none;align-items:center;gap:8px;font-family:var(--ui);font-size:11px;color:var(--green);letter-spacing:.1em;margin-top:8px">✓ Sent — I'll reply within 24 hours.</div>
         <div id="err" style="display:none;align-items:center;gap:8px;font-family:var(--ui);font-size:11px;color:var(--red);letter-spacing:.1em;margin-top:8px">✗ Something went wrong — email me at rahmansaad@gmail.com</div>
       </form>
       <script>
-      document.getElementById('contactForm').addEventListener('submit',async function(e){
+      document.getElementById('contactForm').addEventListener('submit', async function(e) {
         e.preventDefault();
-        const btn=document.getElementById('submitBtn');
-        const okEl=document.getElementById('ok'), errEl=document.getElementById('err');
-        okEl.style.display='none'; errEl.style.display='none';
-        btn.textContent='Sending...'; btn.disabled=true;
-        const payload={
-          name: document.getElementById('f-name').value,
-          email: document.getElementById('f-email').value,
-          topic: document.getElementById('f-topic').value,
-          message: document.getElementById('f-message').value
-        };
-        try{
-          const res=await fetch('https://formsubmit.co/ajax/rahmansaad@gmail.com',{
-            method:'POST',
-            headers:{'Content-Type':'application/json','Accept':'application/json'},
-            body:JSON.stringify(payload)
-          });
-          const json=await res.json();
-          if(json.success==='true'||json.success===true){
-            okEl.style.display='flex';
-            this.reset();
-          } else { errEl.style.display='flex'; }
-        }catch(err){ errEl.style.display='flex'; }
-        finally{ btn.textContent='Send Message →'; btn.disabled=false; }
+        const btn = document.getElementById('submitBtn');
+        const okEl = document.getElementById('ok'), errEl = document.getElementById('err');
+        okEl.style.display = 'none'; errEl.style.display = 'none';
+        btn.textContent = 'Sending...'; btn.disabled = true;
+        const formData = new FormData(this);
+        formData.append('access_key', '59b9ccbc-7df9-4888-a628-3594374dcca1');
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+          const data = await res.json();
+          if (data.success) { okEl.style.display = 'flex'; this.reset(); }
+          else { errEl.style.display = 'flex'; }
+        } catch(err) { errEl.style.display = 'flex'; }
+        finally { btn.textContent = 'Send Message →'; btn.disabled = false; }
       });
       </script>
     </div>
@@ -115,14 +125,14 @@
 <footer class="footer">
   <div class="footer-top">
     <div class="f-brand">
-      <a href="sr-index.html" class="f-logo" style="display:flex;align-items:center;gap:8px">
+      <a href="index.html" class="f-logo" style="display:flex;align-items:center;gap:8px">
         <img src="sr-logo2.png" alt="SR" style="width:26px;height:26px;border-radius:50%;object-fit:cover">
         <span>Sadur<span style="color:var(--gold)">.</span></span>
       </a>
       <p class="f-tagline">Product Designer · 12 Years<br>Bengaluru · Available globally</p>
     </div>
     <div class="f-cols">
-      <div class="f-col"><span class="f-col-label">Navigate</span><a href="sr-index.html#work">Work</a><a href="sr-about.html">About</a><a href="sr-contact.html">Contact</a></div>
+      <div class="f-col"><span class="f-col-label">Navigate</span><a href="index.html#work">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
       <div class="f-col"><span class="f-col-label">Contact</span><a href="mailto:rahmansaad@gmail.com">Email</a><a href="https://linkedin.com/in/rahmansaad" target="_blank">LinkedIn</a><a href="https://dribbble.com/rahmansaad" target="_blank">Dribbble</a><a href="https://behance.net/srahman" target="_blank">Behance</a></div>
     </div>
     <div class="footer-clock">
